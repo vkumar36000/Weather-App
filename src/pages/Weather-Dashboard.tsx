@@ -6,6 +6,8 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { useForecastQuery, useReverseGeocodeQuery, useWeahterQuery } from '@/Hooks/use-weather';
 import CurrentWeather from '@/components/CurrentWeather_';
 import { GeocodingRespnse } from '@/Api/Types';
+import HourlyTempreture from '@/components/Hourley-tempreture_';
+import WeatherDetails from '@/components/WeatherDetails_';
 
 
 
@@ -102,19 +104,25 @@ function WeatherDashboard() {
           onClick={handleRefresh}
           disabled={weatherQuery.isFetched || forecastQuery.isFetched}
         >
-          <RefreshCcw className={ `h-4 w-4 ${weatherQuery.isFetched ? "animate-s" : " "}`} />
+          <RefreshCcw className={ `h-4 w-4 ${weatherQuery.isFetched ? "animate-sp" : " "}`} />
         </Button>
       </div>
 
       <div className="grid gap-6">
-        <div>
+        <div className='flex flex-col lg:flex-row gap-4'>
           <CurrentWeather 
           data={weatherQuery.data}
           locationName={locationName as GeocodingRespnse}
           />
-           {/* current weather  */}
-           {/* hourly temprachure */}
+
+           <HourlyTempreture
+            data={forecastQuery.data}
+           />
         </div>
+          <WeatherDetails 
+            data={weatherQuery.data}
+            
+          />
            {/* details */}
            {/* forecast */}
       </div>

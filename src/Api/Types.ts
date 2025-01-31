@@ -21,7 +21,7 @@ export interface WeatherData {
       humidity: number,
 
    };
-   Wind: {
+   wind: {
       speed: number,
       deg: number,
    };
@@ -39,7 +39,7 @@ export interface ForecastData {
         dt: number;
         main: WeatherData["main"];
         weather:WeatherData["weather"];
-        Wind: WeatherData["Wind"];
+        Wind: WeatherData["wind"];
         dt_txt: string;
         }>;
         City: {
