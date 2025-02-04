@@ -10,7 +10,9 @@ import { useQuery } from "@tanstack/react-query";
 export const WEATHER_KEY ={
     weather:(coords:coordinates) =>["weather", coords] as const,
     forecast:(coords:coordinates) =>["forecast", coords] as const,
-    location:(coords:coordinates) =>["location", coords] as const
+    location:(coords:coordinates) =>["location", coords] as const,
+    search:(query:string) =>["location-search", query] as const,
+
 } as const;
 
 export function useWeahterQuery(Coordinates:coordinates | null) {
@@ -38,4 +40,12 @@ export function useReverseGeocodeQuery(Coordinates:coordinates | null) {
            Coordinates ? weatherAPI.reverseGeocode(Coordinates):null,
        enabled: !!Coordinates,
     });
+}
+
+export function searchLocations(query:string) {
+    return useQuery({
+        queryKey:WEATHER_KEY.search(query),
+        queryFn:() => weatherAPI.searchLocations(query),
+        enabled: query.length >= 3,
+     });
 }

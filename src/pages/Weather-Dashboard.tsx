@@ -8,6 +8,7 @@ import CurrentWeather from '@/components/CurrentWeather_';
 import { GeocodingRespnse } from '@/Api/Types';
 import HourlyTempreture from '@/components/Hourley-tempreture_';
 import WeatherDetails from '@/components/WeatherDetails_';
+import WeatherForecast from '@/components/WeatherForecast_';
 
 
 
@@ -119,12 +120,16 @@ function WeatherDashboard() {
             data={forecastQuery.data}
            />
         </div>
+        <div className='grid gap-6 md:grid-cols-2 items-start'>
           <WeatherDetails 
             data={weatherQuery.data}
             
           />
            {/* details */}
+           <WeatherForecast 
+           data={forecastQuery.data}/>
            {/* forecast */}
+        </div>   
       </div>
     </div>
   );

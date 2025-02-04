@@ -39,7 +39,7 @@ export interface ForecastData {
         dt: number;
         main: WeatherData["main"];
         weather:WeatherData["weather"];
-        Wind: WeatherData["wind"];
+        wind: WeatherData["wind"];
         dt_txt: string;
         }>;
         City: {
