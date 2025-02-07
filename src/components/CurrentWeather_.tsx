@@ -41,7 +41,7 @@ const formatTemp = (temp:number) =>`${Math.round(temp)}º`;
                 </div>
 
                 <div className="flex items-center gap-2">
-                    <p className='text-7xl font-bold tracking-tigher'>
+                <p className={`text-7xl font-bold tracking-tigher ${temp == temp_min ? 'text-blue-500' : temp == temp_max ? 'text-red-500' : 'text-black' } `}>
                         {formatTemp(temp)}
                     </p>
 

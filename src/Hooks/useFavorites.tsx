@@ -52,11 +52,11 @@ export function useFavorites() {
         },
     });
 
-    const removeFavote = useMutation({
+    const removeFavorite = useMutation({
         mutationFn: async (cityId:string)=>{
             const newFavorites = favorites.filter((city) => city.id !== cityId);
             setfavorites(newFavorites);
-            return newFavorites;
+            return favorites;
         },
         onSuccess:() =>{
             queryClient.invalidateQueries({
@@ -69,7 +69,7 @@ export function useFavorites() {
     return{
         favorites:favoriteQuery.data??[],
         addfavorite,
-        removeFavote,
+        removeFavorite,
         isFavorite:(lat:number, lon:number)=>  favorites.some((city) => city.lat === lat && city.lon === lon),
     };
      

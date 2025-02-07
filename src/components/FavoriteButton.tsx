@@ -11,12 +11,12 @@ interface FavoriteButtonProps{
 
 
 const FavoriteButton = ({ data }:FavoriteButtonProps) => {
-const {addfavorite, isFavorite, removeFavote} = useFavorites();
+const {addfavorite, isFavorite, removeFavorite} = useFavorites();
 const isCurrentlyFavorite = isFavorite(data.coord.lat, data.coord.lon);
 
 const handleToggleFavorite=()=>{
   if (isCurrentlyFavorite) {
-    removeFavote.mutate(`${data.coord.lat}-${data.coord.lon}`);
+    removeFavorite.mutate(`${data.coord.lat}-${data.coord.lon}`);
     toast.error(`Removed ${data.name} from Favorites`);
   }else{
     addfavorite.mutate({
