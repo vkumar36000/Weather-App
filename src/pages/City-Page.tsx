@@ -1,4 +1,3 @@
-import { GeocodingRespnse } from '@/Api/Types';
 import CurrentWeather from '@/components/CurrentWeather_';
 import FavoriteButton from '@/components/FavoriteButton';
 import HourlyTempreture from '@/components/Hourley-tempreture_';

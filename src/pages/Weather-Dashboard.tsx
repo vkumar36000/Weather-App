@@ -106,7 +106,7 @@ function WeatherDashboard() {
           onClick={handleRefresh}
           disabled={weatherQuery.isFetched || forecastQuery.isFetched}
         >
-          <RefreshCcw className={ `h-4 w-4 ${weatherQuery.isFetched ? "animate-spi" : " "}`} />
+          <RefreshCcw className={ `h-4 w-4 ${weatherQuery.isFetched ? "animate-spin" : ""}`} />
         </Button>
       </div>
 
