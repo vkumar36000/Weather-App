@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from './ui/command'
+import { CommandDialog, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from './ui/command'
 import { Clock, Loader2, Search, Star, XCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { searchLocations } from '@/Hooks/use-weather';
