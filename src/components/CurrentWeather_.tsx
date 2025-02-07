@@ -5,16 +5,16 @@ import { ArrowBigDown, ArrowBigUp, Droplets, Wind } from 'lucide-react';
 
 interface CurrentWeatherProps {
     data:WeatherData,
-    locationName:GeocodingRespnse
+    locationName?:GeocodingRespnse
 }
 
 
 const CurrentWeather = ({ data, locationName}:CurrentWeatherProps) =>{
-   const {
+const {
     weather: [CurrentWeather],
-    main: {temp, feels_like, temp_min, temp_max, humidity},   
-    // Wind: {speed},
-   } = data;
+    main: { temp, feels_like, temp_min, temp_max, humidity },
+    wind: { speed } = {},
+} = data;
 
 const formatTemp = (temp:number) =>`${Math.round(temp)}º`;
 
@@ -31,7 +31,7 @@ const formatTemp = (temp:number) =>`${Math.round(temp)}º`;
                             {locationName?.name}</h2>
                         {locationName?.state ?? (
                            <span className='text-muted-foreground'>
-                              , {locationName.state}
+                               {locationName?.state}
                            </span>
                         )}   
                     </div>
@@ -78,7 +78,7 @@ const formatTemp = (temp:number) =>`${Math.round(temp)}º`;
                         <Wind className='h-4 w-4 text-blue-500'/>
                         <div className="space-y-0.5">
                             <p className='text-sm font-medium '>Wind Speed</p>
-                            <p className='text-sm font-muted-foreground'>speed m/s</p>
+                            <p className='text-sm font-muted-foreground'>{speed}  m/s</p>
                         </div>
                 </div>
             </div>

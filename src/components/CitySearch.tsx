@@ -32,7 +32,7 @@ export const CitySearch = () => {
       })
 
       setopen(false);
-      navigate(`/city/${name}??lat=${lat}&lon=${lon}`);
+      navigate(`/city/${name}?lat=${lat}&lon=${lon}`);
    }
 
    console.log(locations);

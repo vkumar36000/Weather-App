@@ -1,6 +1,4 @@
-import { useSearchParams } from "react-router-dom";
 import { API_CONFIG } from "./Config";
-import { promises } from "dns";
 import { coordinates, ForecastData, GeocodingRespnse, WeatherData } from "./Types";
 
 class WeatherAPI{

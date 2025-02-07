@@ -9,6 +9,7 @@ import { GeocodingRespnse } from '@/Api/Types';
 import HourlyTempreture from '@/components/Hourley-tempreture_';
 import WeatherDetails from '@/components/WeatherDetails_';
 import WeatherForecast from '@/components/WeatherForecast_';
+import FavoriteCities from '@/components/FavoriteCities';
 
 
 
@@ -96,7 +97,7 @@ function WeatherDashboard() {
 
   return (
     <div className='space-y-4'>
-      {/* <div>fevorite cities</div> */}
+      <div><FavoriteCities/></div>
       <div className="flex items-center justify-between">
         <h1 className='text-xl font-bold tracking-tight'>My Location</h1>
         <Button
@@ -105,7 +106,7 @@ function WeatherDashboard() {
           onClick={handleRefresh}
           disabled={weatherQuery.isFetched || forecastQuery.isFetched}
         >
-          <RefreshCcw className={ `h-4 w-4 ${weatherQuery.isFetched ? "animate-sp" : " "}`} />
+          <RefreshCcw className={ `h-4 w-4 ${weatherQuery.isFetched ? "animate-spi" : " "}`} />
         </Button>
       </div>
 
