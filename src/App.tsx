@@ -4,7 +4,6 @@ import { ThemeProvider } from "./context/theme-provider";
 import WeatherDashboard from "./pages/Weather-Dashboard";
 import CityPage from "./pages/City-Page";
 import { QueryClient, QueryClientProvider} from "@tanstack/react-query"
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Toaster } from "./components/ui/sonner";
 
 
