@@ -62,6 +62,7 @@ export const CitySearch = () => {
                         {favorites.map((location) =>{
 
                         return <CommandItem
+                        className='cursor-pointer'
                         key={location.id}
                         value={`${location.lat} | ${location.lon} | ${location.name} | ${location.country}`}
                         onSelect={handleSelect}
@@ -100,6 +101,7 @@ export const CitySearch = () => {
                         {history.map((location) =>{
 
                         return <CommandItem
+                        className='cursor-pointer'
                         key={`${location.lat}- ${location.lon}`}
                         value={`${location.lat} | ${location.lon} | ${location.name} | ${location.country}`}
                         onSelect={handleSelect}

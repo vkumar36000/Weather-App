@@ -56,5 +56,5 @@ export interface GeocodingRespnse {
     lat:number;
     lon:number;
     country:string;
-    state?:string;                                                               // for making objects optional when fething data from server
+    state:string;                                                               // for making objects optional when fething data from server
 }

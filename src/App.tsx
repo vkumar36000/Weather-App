@@ -36,8 +36,8 @@ function App() {
         <Toaster richColors/>
       </ThemeProvider>
     </BrowserRouter>      
-    <ReactQueryDevtools initialIsOpen={false} />
-  </QueryClientProvider>
+    {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+  </QueryClientProvider> 
   );
 }
 
