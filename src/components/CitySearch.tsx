@@ -20,7 +20,7 @@ export const CitySearch = () => {
    
 
    const handleSelect=(cityData:string)=>{
-      const [lat, lon, name, country] = cityData.split("|");
+      const [lat, lon, name, country] = cityData.split(" | ");
      
       // add search history
       addToHistory.mutate({
