@@ -1,11 +1,11 @@
-import { GeocodingRespnse, WeatherData } from '@/Api/Types';
+import { GeocodingResponse, WeatherData } from '@/Api/Types';
 import { Card, CardContent } from './ui/card';
 import { ArrowBigDown, ArrowBigUp, Droplets, Wind } from 'lucide-react';
 
 
 interface CurrentWeatherProps {
     data:WeatherData,
-    locationName?:GeocodingRespnse
+    locationName?:GeocodingResponse
 }
 
 
@@ -41,7 +41,7 @@ const formatTemp = (temp:number) =>`${Math.round(temp)}º`;
                 </div>
 
                 <div className="flex items-center gap-2">
-                <p className={`text-7xl font-bold tracking-tigher ${temp == temp_min ? 'text-blue-500' : temp == temp_max ? 'text-red-500' : 'text-black' } `}>
+                                    <p className={`text-7xl font-bold tracking-tighter ${temp == temp_min ? 'text-blue-500' : temp == temp_max ? 'text-red-500' : 'text-black' } `}>
                         {formatTemp(temp)}
                     </p>
 
@@ -69,7 +69,7 @@ const formatTemp = (temp:number) =>`${Math.round(temp)}º`;
                         <Droplets className='h-4 w-4 text-blue-500'/>
                         <div className="space-y-0.5">
                             <p className='text-sm font-medium '>Humidity</p>
-                            <p className='text-sm font-muted-foreground'>{humidity}%</p>
+                            <p className='text-sm text-muted-foreground'>{humidity}%</p>
                         </div>
                     </div>
                 </div>

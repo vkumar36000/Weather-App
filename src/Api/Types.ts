@@ -44,13 +44,13 @@ export interface ForecastData {
         }>;
         City: {
         name: string;
-        country: String;
+        country: string;
         sunrise: number;
         sunset:number;
     };   
 }
 
-export interface GeocodingRespnse {
+export interface GeocodingResponse {
     name:string;
     local_names?:Record<string, string>;
     lat:number;

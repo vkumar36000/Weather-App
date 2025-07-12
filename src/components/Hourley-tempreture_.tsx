@@ -4,13 +4,13 @@ import { Line, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts"
 import { LineChart } from 'recharts';
 import { format } from 'date-fns';
 
-interface HourlyTempreture {
+interface HourlyTemperature {
     data:ForecastData
 }
 
 
 
-function HourlyTempreture({ data }:HourlyTempreture ) {
+function HourlyTemperature({ data }:HourlyTemperature ) {
   const chartData = data.list.slice(0, 8).map((item) =>({
     time:format(new Date(item.dt * 1000), "ha"),
     temp:Math.round(item.main.temp),
@@ -22,7 +22,7 @@ function HourlyTempreture({ data }:HourlyTempreture ) {
         <Card className='flex-1'>
         <CardHeader>
           <CardTitle>
-            Today,s Tempereture
+            Today's Temperature
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -50,7 +50,7 @@ function HourlyTempreture({ data }:HourlyTempreture ) {
                             <div className='grid grid-cols-2 gap-2'>
                                 <div className='flex flex-col'>
                                     <span className='text-[0.70rem] uppercase text-muted-foreground'>
-                                        Temprature
+                                        Temperature
                                     </span>
                                     <span className='font-bold'>
                                         {payload[0].value}º
@@ -99,4 +99,4 @@ function HourlyTempreture({ data }:HourlyTempreture ) {
   );
 }
 
-export default HourlyTempreture;
+export default HourlyTemperature;

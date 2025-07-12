@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { CommandDialog, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from './ui/command'
 import { Clock, Loader2, Search, Star, XCircle } from 'lucide-react';
 import { Button } from './ui/button';
-import { searchLocations } from '@/Hooks/use-weather';
+import { useSearchLocations } from '@/Hooks/use-weather';
 import { useNavigate } from 'react-router-dom';
 import { useSearchHistory } from '@/Hooks/useSearchHistory';
 import { format } from 'date-fns';
@@ -15,7 +15,7 @@ export const CitySearch = () => {
    const [query, setquery] = useState("");
    const navigate = useNavigate()
 
-   const {data:locations, isLoading} = searchLocations(query);
+   const {data:locations, isLoading} = useSearchLocations(query);
    const {history, clearHistory, addToHistory } = useSearchHistory();
    
 

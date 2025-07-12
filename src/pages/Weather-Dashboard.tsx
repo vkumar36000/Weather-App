@@ -1,11 +1,11 @@
 import { Button } from '@/components/ui/button';
-import { useGeaolocation } from '@/Hooks/use-Geaolocation';
+import { useGeolocation } from '@/Hooks/use-Geaolocation';
 import { AlertTriangle, MapPin, RefreshCcw } from 'lucide-react';
 import WeatherSkeleton from '@/components/Loading-skeleton';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { useForecastQuery, useReverseGeocodeQuery, useWeahterQuery } from '@/Hooks/use-weather';
+import { useForecastQuery, useReverseGeocodeQuery, useWeatherQuery } from '@/Hooks/use-weather';
 import CurrentWeather from '@/components/CurrentWeather_';
-import HourlyTempreture from '@/components/Hourley-tempreture_';
+import HourlyTemperature from '@/components/Hourley-tempreture_';
 import WeatherDetails from '@/components/WeatherDetails_';
 import WeatherForecast from '@/components/WeatherForecast_';
 import FavoriteCities from '@/components/FavoriteCities';
@@ -15,11 +15,11 @@ import FavoriteCities from '@/components/FavoriteCities';
 
 
 function WeatherDashboard() {
- const { coordinates, error:locationError, isLoading:locationLoading, getLocation } = useGeaolocation();
+ const { coordinates, error:locationError, isLoading:locationLoading, getLocation } = useGeolocation();
 
  const locationQuery = useReverseGeocodeQuery(coordinates);
  const forecastQuery = useForecastQuery(coordinates);
- const weatherQuery = useWeahterQuery(coordinates);
+ const weatherQuery = useWeatherQuery(coordinates);
 
  console.log(locationQuery);
  console.log(forecastQuery);
@@ -30,9 +30,9 @@ function WeatherDashboard() {
  const handleRefresh = ()=>{
       getLocation();
       if (coordinates) {
-        locationQuery.refetch;   
-        forecastQuery.refetch;
-        weatherQuery.refetch;
+        locationQuery.refetch();   
+        forecastQuery.refetch();
+        weatherQuery.refetch();
       }
  };
 
@@ -116,7 +116,7 @@ function WeatherDashboard() {
           locationName={locationName}
           />
 
-           <HourlyTempreture
+           <HourlyTemperature
             data={forecastQuery.data}
            />
         </div>

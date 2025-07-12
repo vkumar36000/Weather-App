@@ -1,7 +1,7 @@
 import { useFavorites } from '@/Hooks/useFavorites';
 import { ScrollArea } from './ui/scroll-area';
 import { useNavigate } from 'react-router-dom';
-import { useWeahterQuery } from '@/Hooks/use-weather';
+import { useWeatherQuery } from '@/Hooks/use-weather';
 import { Button } from './ui/button';
 import { Loader2, X } from 'lucide-react';
 import { toast } from 'sonner';
@@ -45,7 +45,7 @@ const FavoriteCities = () => {
 
 function FavoriteCityTablet({id, name, lat, lon, onRemove}:FavoriteCityTabletProps) {
     const navigate = useNavigate()
-    const {data:weather, isLoading} = useWeahterQuery({lat, lon});
+    const {data:weather, isLoading} = useWeatherQuery({lat, lon});
 
     return (
         <div 

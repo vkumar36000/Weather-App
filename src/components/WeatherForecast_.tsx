@@ -92,7 +92,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
                                 </span>
                                 <span className="flex items-center gap-1">
                                    <Wind className="h-4 w-4 text-blue-500"/>
-                                   <span className="text-sm">{day.wind}%</span>
+                                   <span className="text-sm">{day.wind}m/s</span>
                                 </span>
                             </div>
                         </div>
