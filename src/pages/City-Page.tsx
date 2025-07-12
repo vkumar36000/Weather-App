@@ -1,11 +1,11 @@
 import CurrentWeather from '@/components/CurrentWeather_';
 import FavoriteButton from '@/components/FavoriteButton';
-import HourlyTempreture from '@/components/Hourley-tempreture_';
+import HourlyTemperature from '@/components/Hourley-tempreture_';
 import WeatherSkeleton from '@/components/Loading-skeleton';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import WeatherDetails from '@/components/WeatherDetails_';
 import WeatherForecast from '@/components/WeatherForecast_';
-import { useForecastQuery, useWeahterQuery } from '@/Hooks/use-weather';
+import { useForecastQuery, useWeatherQuery } from '@/Hooks/use-weather';
 import { AlertTriangle } from 'lucide-react';
 import { useParams, useSearchParams } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ function CityPage() {
   const coordinates = {lat, lon};
 
   const forecastQuery = useForecastQuery(coordinates);
-  const weatherQuery = useWeahterQuery(coordinates);
+  const weatherQuery = useWeatherQuery(coordinates);
 
   if (weatherQuery.error || forecastQuery.error) {
     return (
@@ -62,7 +62,7 @@ function CityPage() {
       data={weatherQuery.data}
       />
 
-       <HourlyTempreture
+       <HourlyTemperature
         data={forecastQuery.data}
        />
     </div>

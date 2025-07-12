@@ -9,7 +9,7 @@ interface GeolocationState{
 }
 
 
-export function useGeaolocation() {
+export function useGeolocation() {
   const [locationData, setlocationData] = useState<GeolocationState>({
         coordinates:null,
         error:null,
@@ -22,7 +22,7 @@ export function useGeaolocation() {
     if (!navigator.geolocation) {
         setlocationData({
             coordinates:null,
-            error:"Geaolocaiton is not supported by the  browser ",
+            error:"Geolocation is not supported by the browser",
             isLoading:false,
         });
         return;
@@ -32,7 +32,7 @@ export function useGeaolocation() {
         setlocationData({
             coordinates:{
                 lat:position.coords.latitude,
-                lon:position.coords.latitude,
+                lon:position.coords.longitude,
             },
             error:null,
             isLoading:false,
